@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2010-2011 ApexIdentity Inc.
+  Portions Copyright 2011-2024 ForgeRock AS.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <!--<parent>-->
+    <groupId>org.forgerock.openig</groupId>
+   <!-- <artifactId>openig-project</artifactId>-->
+    <version>2023.6.0-SNAPSHOT</version>
+  <!--</parent>-->
+  <artifactId>openig-akv-secrets</artifactId>
+  <name>IG Core library</name>
+
+  <properties>
+    <revision>2023.6.0-SNAPSHOT</revision>
+    <buildnumber-maven-plugin.version>3.2.0</buildnumber-maven-plugin.version>
+    <h2.version>2.1.214</h2.version>
+    <ivy.version>2.5.2</ivy.version>
+    <juel.version>2.2.7</juel.version>
+    <assertj.version>3.23.1</assertj.version>
+    <mockito.version>5.7.0</mockito.version>
+    <mockito-testng.version>0.5.2</mockito-testng.version>
+    <testng.version>7.3.0</testng.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.forgerock.openig</groupId>
+      <artifactId>openig-core</artifactId>
+      <version>2023.6.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.forgerock.commons</groupId>
+      <version>26.5.0-SNAPSHOT</version>
+      <artifactId>secrets-backend-azure-key-vault</artifactId>
+    </dependency>
+    <!--test deps-->
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <scope>test</scope>
+      <version>${testng.version}</version>
+  </dependency>
+  <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <scope>test</scope>
+      <version>${assertj.version}</version>
+  </dependency>
+  <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <scope>test</scope>
+      <version>${mockito.version}</version>
+  </dependency>
+  <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-testng</artifactId>
+      <scope>test</scope>
+      <version>${mockito-testng.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <scope>test</scope>
+    <version>5.10.2</version>
+  </dependency>
+  <dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-junit-jupiter</artifactId>
+    <scope>test</scope>
+    <version>5.10.0</version>
+  </dependency>
+  </dependencies>
+
+
+  <repositories>
+    <repository>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+        <id>forgerock-private-releases</id>
+        <name>ForgeRock Private Release Repository</name>
+        <url>https://maven.forgerock.org/artifactory/private-releases</url>
+    </repository>
+    <repository>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+        <id>forgerock-internal-releases</id>
+        <name>ForgeRock Private Release Repository</name>
+        <url>https://maven.forgerock.org/ /internal-releases</url>
+    </repository>
+</repositories>
+
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>test-jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <!--<plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>buildnumber-maven-plugin</artifactId>
+        <version>${buildnumber-maven-plugin.version}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>create</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>-->
+    </plugins>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+  </build>
+</project>
