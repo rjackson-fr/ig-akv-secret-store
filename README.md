@@ -1,6 +1,6 @@
 # Azure Key Vault Secret Store
 
-A secret store plugin for IG (tested on 2023.11.0) to retrieve secrets from Azure Key Vault at run-time.
+A secret store plugin for IG (tested on 2023.6.0) to retrieve secrets from Azure Key Vault at run-time.
 
 ## Prerequisites
 
@@ -31,7 +31,8 @@ The first step is to install this plugin into IG. The plugin can be downloaded f
 The plugin can be used in place of other secret stores in cconfig json files:
 
 ## Example 1 - using default credentials (60 seconds validity on fetched secrets)
-```json{
+```json
+{
     "name": "AKVSecretStore-1",
     "type": "org.forgerock.openig.secrets.AzureKeyVaultSecretStoreHeaplet",
     "config": {
@@ -42,7 +43,8 @@ The plugin can be used in place of other secret stores in cconfig json files:
 ```
 
 ## Example 2 - using client secret credentials (600 seconds validity on fetched secrets)
-```json{
+```json
+{
     "name": "AKVSecretStore-1",
     "type": "org.forgerock.openig.secrets.AzureKeyVaultSecretStoreHeaplet",
     "config": {
