@@ -1,6 +1,6 @@
 # Azure Key Vault Secret Store
 
-A secret store plugin for IG (tested on 2023.6.0) to retrieve secrets from Azure Key Vault at run-time.
+A secret store plugin for IG (tested on 2025.3.0) to retrieve secrets from Azure Key Vault at run-time.
 
 ## Prerequisites
 
@@ -26,7 +26,7 @@ Currenltly these credentials will be stored in AM's configuration (ecrypted with
 
 ## Configuring AKV Secret Store in IG
 
-The first step is to install this plugin into IG. The plugin can be downloaded from the current releases here. Copy the jar file into the ~/.openig/config/extra (or ./config/extra directory within your IG project) 
+The first step is to install this plugin into IG. The plugin can be downloaded from the current releases here. Copy the jar file into the ~/.openig/extra (or ./extra directory within your IG project - may be different if start.sh is customized) 
 
 The plugin can be used in place of other secret stores in cconfig json files:
 
